@@ -1,0 +1,16 @@
+<div style="padding-bottom: 20px">
+    <h1 style="margin: 35px 15px; font-size: 36px">SpaceX Missions List</h1>
+    <div *ngFor="let mission of missions" style="margin: 15px">
+        <mat-card style="box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important; border-radius: 0.25rem !important">
+            <mat-card-title-group>
+                <mat-card-title>{{ mission.mission_name }}</mat-card-title>
+                <mat-card-subtitle>{{ mission.launch_year }}</mat-card-subtitle>
+                <img mat-card-sm-image src="{{ mission.links.mission_patch_small }}" />
+            </mat-card-title-group>
+            <mat-card-content>{{ mission.details }}</mat-card-content>
+            <mat-card-actions>
+                <a mat-stroked-button color="primary" routerLink="/{{ mission.flight_number }}">View details</a>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
